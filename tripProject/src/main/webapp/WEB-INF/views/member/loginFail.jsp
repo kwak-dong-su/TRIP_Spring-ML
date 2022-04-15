@@ -4,12 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>가입성공</title>
+<title>로그인 성공</title>
 </head>
-<script type="text/javascript">
-	alert("회원 가입이 완료되었습니다.")
-	location.href="createMemberForm.jsp"
+<script>
+	alert('로그인 실패')
+	location.href='loginMain.jsp'
 </script>
 <body>
+	
 </body>
 </html>

@@ -14,4 +14,21 @@ public class MemberDAO {
 	{
 		my.insert("member.create", vo);
 	}
+	
+	public MemberVO selectOneId(MemberVO vo)
+	{
+		return my.selectOne("member.oneId", vo);
+	}
+	
+	public MemberVO selectOneName(MemberVO vo)
+	{
+		return my.selectOne("member.oneName", vo);
+	}
+	
+	public MemberVO loginHiTrip(MemberVO vo)
+	{
+		return my.selectOne("member.loginHiTrip", vo);
+	}
+	
+	
 }
