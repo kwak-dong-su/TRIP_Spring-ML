@@ -9,19 +9,19 @@
 	<title>Mogo | OnePage Responsive Theme</title>
 	
 	<!-- favicon -->
-    <link rel="shortcut icon" href="resources/images/ico/favicon.jpg">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="resources/images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="resources/images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="resources/images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="resources/images/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="../resources/images/ico/favicon.jpg">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../resources/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../resources/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../resources/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../resources/images/ico/apple-touch-icon-57-precomposed.png">
 	
 	<!-- css -->
-	<link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css" />
-	<link rel="stylesheet" type="text/css" href="resources/css/materialdesignicons.min.css" />
-	<link rel="stylesheet" type="text/css" href="resources/css/jquery.mCustomScrollbar.min.css" />
-	<link rel="stylesheet" type="text/css" href="resources/css/prettyPhoto.css" />
-	<link rel="stylesheet" type="text/css" href="resources/css/unslider.css" />
-	<link rel="stylesheet" type="text/css" href="resources/css/template.css" />
+	<link rel="stylesheet" type="text/css" href="../resources/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="../resources/css/materialdesignicons.min.css" />
+	<link rel="stylesheet" type="text/css" href="../resources/css/jquery.mCustomScrollbar.min.css" />
+	<link rel="stylesheet" type="text/css" href="../resources/css/prettyPhoto.css" />
+	<link rel="stylesheet" type="text/css" href="../resources/css/unslider.css" />
+	<link rel="stylesheet" type="text/css" href="../resources/css/template.css" />
 	
 </head>
 
@@ -901,15 +901,15 @@
 	<a href="#" id="nino-scrollToTop">Go to Top</a>
 	
 	<!-- javascript -->
-	<script type="text/javascript" src="resources/js/jquery.min.js"></script>	
-	<script type="text/javascript" src="resources/js/isotope.pkgd.min.js"></script>
-	<script type="text/javascript" src="resources/js/jquery.prettyPhoto.js"></script>
-	<script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="resources/js/jquery.hoverdir.js"></script>
-	<script type="text/javascript" src="resources/js/modernizr.custom.97074.js"></script>
-	<script type="text/javascript" src="resources/js/jquery.mCustomScrollbar.concat.min.js"></script>
-	<script type="text/javascript" src="resources/js/unslider-min.js"></script>
-	<script type="text/javascript" src="resources/js/template.js"></script>
+	<script type="text/javascript" src="../resources/js/jquery.min.js"></script>	
+	<script type="text/javascript" src="../resources/js/isotope.pkgd.min.js"></script>
+	<script type="text/javascript" src="../resources/js/jquery.prettyPhoto.js"></script>
+	<script type="text/javascript" src="../resources/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../resources/js/jquery.hoverdir.js"></script>
+	<script type="text/javascript" src="../resources/js/modernizr.custom.97074.js"></script>
+	<script type="text/javascript" src="../resources/js/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script type="text/javascript" src="../resources/js/unslider-min.js"></script>
+	<script type="text/javascript" src="../resources/js/template.js"></script>
 
 	<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]>
