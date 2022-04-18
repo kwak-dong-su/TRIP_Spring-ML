@@ -48,7 +48,7 @@
     <form action="loginHitrip">
         <input type="text" name="member_id" id="member_id" placeholder="아이디" autofocus><br>
         <input type="password" name="member_pw" id="member_pw" placeholder="패스워드"><br>
-        <input id="loginHitrip" type="button" value="로그인"></button>
+        <button id="loginHitrip" type="button">로그인</button>
     </form>
     <p></p>
 </body>
