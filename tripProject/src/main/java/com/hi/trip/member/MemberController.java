@@ -80,7 +80,7 @@ public class MemberController {
 	}
 	
 	@RequestMapping("member/loginNaver")
-	public void loginNaver()
+	public void loginNaver(Model model,HttpSession session)
 	{
 		
 	}
@@ -90,4 +90,7 @@ public class MemberController {
 	{
 		
 	}
+	
+	
+	
 }
