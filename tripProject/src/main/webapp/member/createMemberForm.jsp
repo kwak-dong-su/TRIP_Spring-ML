@@ -3,7 +3,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="ninodezign.com, ninodezign@gmail.com">
+	<meta name="copyright" content="ninodezign.com"> 
+	<!-- favicon -->
+    <link rel="shortcut icon" href="resources/images/ico/favicon.jpg">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../resources/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../resources/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../resources/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../resources/images/ico/apple-touch-icon-57-precomposed.png">
+	
+	<!-- css -->
+	<link rel="stylesheet" type="text/css" href="../resources/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="../resources/css/materialdesignicons.min.css" />
+	<link rel="stylesheet" type="text/css" href="../resources/css/jquery.mCustomScrollbar.min.css" />
+	<link rel="stylesheet" type="text/css" href="../resources/css/prettyPhoto.css" />
+	<link rel="stylesheet" type="text/css" href="../resources/css/unslider.css" />
+	<link rel="stylesheet" type="text/css" href="../resources/css/template.css" />
+
 <title>회원가입</title>
 <script type="text/javascript" src="../resources/js/jquery-3.6.0.min.js"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
@@ -200,7 +219,24 @@ $(function(){
 </script>
 </head>
 <body>
-<h3>Hi TRIP으로 가입</h3>
+
+	<header id="nino-header">
+		<div id="nino-headerInner">
+			<%
+				if (session.getAttribute("member_name") == null) {
+			%>
+			<jsp:include page="../header.jsp"></jsp:include>
+			<%
+				} else {
+			%>
+			<jsp:include page="../header2.jsp"></jsp:include>
+			<%
+				}
+			%>
+		</div>
+	</header>
+
+	<h3>Hi TRIP으로 가입</h3>
 	<form action="createMember">
 		아이디: <input type="text" name="member_id" id="member_id"> <button type="button" id="idCheck" >아이디 확인</button><br>
 		비밀번호: <input type="password" name="member_pw" id="member_pw"><br>
@@ -213,6 +249,7 @@ $(function(){
   		<input name="addr_first" id="addr_first" type="text" placeholder="주소" readonly> <button id="find_addr" type="button">주소 찾기</button><br>
   		<input name="addr_last" id="addr_last" type="text" placeholder="상세 주소"><br>
   		<input name="member_addr" id="member_addr" type="hidden">
+  		<input name="member_type" id="member_type" type="hidden" value="1">
 		<button type="button" id="formCheck">가입</button>
 	</form>
 </body>

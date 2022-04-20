@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class MemberController {
@@ -68,9 +69,10 @@ public class MemberController {
 		if(vo!=null)
 		{
 			session.setAttribute("member_idx", vo.getMember_idx());
-			session.setAttribute("member_id", vo.getMember_id());
+			session.setAttribute("member_name", vo.getMember_name());
+			session.setAttribute("member_type", vo.getMember_type());
 			System.out.println("세션 등록 성공");
-			return "redirect:loginMain.jsp";
+			return "redirect:../main.jsp";
 		}
 		else
 		{
@@ -80,8 +82,40 @@ public class MemberController {
 	}
 	
 	@RequestMapping("member/loginNaver")
-	public void loginNaver(Model model,HttpSession session)
+	public String loginNaver(RedirectAttributes redirectAttr, Model model,HttpSession session, String id, String gender, String birthday, String birthyear)
 	{
+		System.out.println(id+" "+gender+" "+birthday+" "+birthyear);
+		MemberVO vo=new MemberVO();
+		vo.setMember_naver_token(id);	
+		vo=dao.loginNaver(vo);
+		
+		if(vo!=null)
+		{
+			session.setAttribute("member_idx", vo.getMember_idx());
+			session.setAttribute("member_name", vo.getMember_name());
+			session.setAttribute("member_type", vo.getMember_type());
+			System.out.println("세션 등록 성공");
+			return "redirect:loginMain.jsp";
+		}
+		else
+		{
+			vo=new MemberVO();
+			vo.setMember_naver_token(id);
+			if(gender.equals("M"))
+			{
+				vo.setMember_gender(1);
+			}
+			else
+			{
+				vo.setMember_gender(2);
+			}
+			vo.setMember_birth(birthyear+"-"+birthday);
+			vo.setMember_type(2);
+				
+			System.out.println(vo);
+			redirectAttr.addFlashAttribute("vo", vo);
+			return "redirect:createNaverForm.jsp";
+		}
 		
 	}
 	
@@ -89,6 +123,14 @@ public class MemberController {
 	public void loginGoogle()
 	{
 		
+	}
+	
+	@RequestMapping("member/logout")
+	public void logout(HttpSession session)
+	{
+		session.removeAttribute("member_idx");
+		session.removeAttribute("member_name");
+		session.removeAttribute("member_type");	
 	}
 	
 	

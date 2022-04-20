@@ -30,5 +30,10 @@ public class MemberDAO {
 		return my.selectOne("member.loginHiTrip", vo);
 	}
 	
+	public MemberVO loginNaver(MemberVO vo)
+	{
+		return my.selectOne("member.loginNaver", vo);
+	}
+	
 	
 }
