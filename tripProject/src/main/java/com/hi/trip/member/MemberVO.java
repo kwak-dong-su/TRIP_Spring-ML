@@ -10,6 +10,8 @@ public class MemberVO {
 	int member_gender;
 	String member_naver_token;
 	String member_google_token;
+	int member_type;
+	
 	public int getMember_idx() {
 		return member_idx;
 	}
@@ -64,14 +66,22 @@ public class MemberVO {
 	public void setMember_google_token(String member_google_token) {
 		this.member_google_token = member_google_token;
 	}
+	public int getMember_type() {
+		return member_type;
+	}
+	public void setMember_type(int member_type) {
+		this.member_type = member_type;
+	}
 	
 	@Override
 	public String toString() {
 		return "MemberVO [member_idx=" + member_idx + ", member_id=" + member_id + ", member_pw=" + member_pw
 				+ ", member_name=" + member_name + ", member_birth=" + member_birth + ", member_addr=" + member_addr
 				+ ", member_gender=" + member_gender + ", member_naver_token=" + member_naver_token
-				+ ", member_google_token=" + member_google_token + "]";
+				+ ", member_google_token=" + member_google_token + ", member_type=" + member_type + "]";
 	}
+	
+	
 	
 	
 }

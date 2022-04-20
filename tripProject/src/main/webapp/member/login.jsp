@@ -9,7 +9,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="ninodezign.com, ninodezign@gmail.com">
 	<meta name="copyright" content="ninodezign.com"> 
-	<title>Hi-TRIP | OnePage Responsive Theme</title>
+	<title>HI TRIP</title>
 	
 	<!-- favicon -->
     <link rel="shortcut icon" href="../resources/images/ico/favicon.jpg">
@@ -29,46 +29,398 @@
 </head>
 
 <body data-target="#nino-navbar" data-spy="scroll">
-
-	<!-- Header
+<% if(session.getAttribute("member_name") == null) { %>
+<jsp:include page="../header.jsp"></jsp:include>
+<% } else { %>
+	<jsp:include page="../header2.jsp"></jsp:include>
+<% } %>	
+	<!-- Story About Us
     ================================================== -->
-	<header id="nino-header">
-		<div id="nino-headerInner">					
-			<nav id="nino-navbar" class="navbar navbar-default" role="navigation">
-				<div class="container">
-
-					<!-- Brand and toggle get grouped for better mobile display -->
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nino-navbar-collapse">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<a class="navbar-brand" href="homepage.html">Mogo</a>
+	<section id="nino-story">
+		<div class="container">
+			<h2 class="nino-sectionHeading">
+				추천수에 top3 자리 
+			</h2>
+			<p class="nino-sectionDesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+			
+			<div class="sectionContent">
+				<div class="row nino-hoverEffect">
+					<div class="col-md-4 col-sm-4">
+						<div class="item">
+							<a class="overlay" href="#">
+								<span class="content">
+									<i class="mdi mdi-account-multiple nino-icon"></i>
+									super team
+								</span>
+								<img src="../resources/images/story/img-1.jpg" alt="">
+							</a>
+						</div>
 					</div>
-
-					<!-- Collect the nav links, forms, and other content for toggling -->
-					<div class="nino-menuItem pull-right">
-						<div class="collapse navbar-collapse pull-left" id="nino-navbar-collapse">
-							<ul class="nav navbar-nav">
-								<li class="active"><a href="#nino-header">Home <span class="sr-only">(current)</span></a></li>
-								<li><a href="#nino-story">About</a></li>
-								<li><a href="#nino-services">Service</a></li>
-								<li><a href="#nino-ourTeam">Our Team</a></li>
-								<li><a href="#nino-portfolio">Work</a></li>
-								<li><a href="#nino-latestBlog">Blog</a></li>
-							</ul>
-						</div><!-- /.navbar-collapse -->
-						<ul class="nino-iconsGroup nav navbar-nav">
-							<li><a href="#"><i class="mdi mdi-cart-outline nino-icon"></i></a></li>
-							<li><a href="#" class="nino-search"><i class="mdi mdi-magnify nino-icon"></i></a></li>
-						</ul>
+					<div class="col-md-4 col-sm-4">
+						<div class="item">
+							<a class="overlay" href="#">
+								<span class="content">
+									<i class="mdi mdi-image-filter-center-focus-weak nino-icon"></i>
+									Creativity
+								</span>
+								<img src="../images/story/img-2.jpg" alt="">
+							</a>
+						</div>
 					</div>
-				</div><!-- /.container-fluid -->
-			</nav>
+					<div class="col-md-4 col-sm-4">
+						<div class="item">
+							<a class="overlay" href="#">
+								<span class="content">
+									<i class="mdi mdi-airplay nino-icon"></i>
+									Digital
+								</span>
+								<img src="../images/story/img-3.jpg" alt="">
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>		
+	</section><!--/#nino-story-->
+	
+	<!-- Story About Us
+    ================================================== -->
+	<section id="nino-story">
+		<div class="container">
+			<div class="vis-weather">
+                <h2 class="nino-sectionHeading">
+                	전국 날씨
+                </h2>
+                <ul class="list-group list-group-flush weather"
+                    style="font-weight: 600;">
+                    <!-- <li class="list-group-item weather"></li> -->
+                </ul>
+			</div>
 		</div>
-	</header><!--/#header-->
+	</section><!--/#nino-story-->
+
+    <!-- Unique Design
+    ================================================== -->
+    <section id="nino-uniqueDesign">
+    	<div class="container">
+    		<h2 class="nino-sectionHeading">
+				<span class="nino-subHeading">For all devices</span>
+				써 먹을 방법이 있을까?
+			</h2>
+			<div class="sectionContent">
+				<div class="nino-devices">
+					<img class="tablet" src="../images/unique-design/img-1.png" alt="">
+					<img class="mobile" src="../images/unique-design/img-2.png" alt="">
+				</div>
+			</div>
+    	</div>
+    </section><!--/#nino-uniqueDesign-->
+
+    <!-- What We Do
+    ================================================== -->
+    <section id="nino-whatWeDo">
+    	<div class="container">
+    		<h2 class="nino-sectionHeading">
+				<span class="nino-subHeading">Service</span>
+				what we do
+			</h2>
+			<p class="nino-sectionDesc">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+			</p>
+			<div class="sectionContent">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="text-center">
+							<img src="../images/what-we-do/img-1.jpg" alt="">
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+							<div class="panel panel-default">
+								<div class="panel-heading" role="tab" id="headingOne">
+									<h4 class="panel-title">
+										<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+											<i class="mdi mdi-chevron-up nino-icon arrow"></i>
+											<i class="mdi mdi-camera nino-icon"></i> 
+											Photography
+										</a>
+									</h4>
+								</div>
+								<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+									<div class="panel-body">
+										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS. Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+									</div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading" role="tab" id="headingTwo">
+									<h4 class="panel-title">
+										<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+											<i class="mdi mdi-chevron-up nino-icon arrow"></i>
+											<i class="mdi mdi-owl nino-icon"></i> 
+											creativity
+										</a>
+									</h4>
+								</div>
+								<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+									<div class="panel-body">
+										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS. Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+									</div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading" role="tab" id="headingThree">
+									<h4 class="panel-title">
+										<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+											<i class="mdi mdi-chevron-up nino-icon arrow"></i>
+											<i class="mdi mdi-laptop-mac nino-icon"></i> 
+											web design
+										</a>
+									</h4>
+								</div>
+								<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+									<div class="panel-body">
+										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS. Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+    	</div>
+    </section><!--/#nino-whatWeDo-->
+
+    <!-- Testimonial
+    ================================================== -->
+    <section class="nino-testimonial">
+    	<div class="container">
+    		<div class="nino-testimonialSlider">
+				<ul>
+					<li>
+						<div layout="row">
+							<div class="nino-symbol fsr">
+								<i class="mdi mdi-comment-multiple-outline nino-icon"></i>
+							</div>
+							<div>
+								<p class="quote">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."</p>
+								<span class="name">Jon Doe</span>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div layout="row">
+							<div class="nino-symbol fsr">
+								<i class="mdi mdi-wechat nino-icon"></i>	
+							</div>
+							<div>
+								<p class="quote">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."</p>
+								<span class="name">Jon Doe</span>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div layout="row">
+							<div class="nino-symbol fsr">
+								<i class="mdi mdi-message-text-outline nino-icon"></i>
+							</div>
+							<div>
+								<p class="quote">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."</p>
+								<span class="name">Jon Doe</span>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+    	</div>
+    </section><!--/#nino-testimonial-->
+
+    <!-- Our Team
+    ================================================== -->
+	<section id="nino-ourTeam">
+		<div class="container">
+			<h2 class="nino-sectionHeading">
+				<span class="nino-subHeading">Who we are</span>
+				Meet our team
+			</h2>
+			<p class="nino-sectionDesc">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+			</p>
+			<div class="sectionContent">
+				<div class="row nino-hoverEffect">
+					<div class="col-md-4 col-sm-4">
+						<div class="item">
+							<div class="overlay" href="#">
+								<div class="content">
+									<a href="#" class="nino-icon"><i class="mdi mdi-facebook"></i></a>
+									<a href="#" class="nino-icon"><i class="mdi mdi-twitter"></i></a>
+									<a href="#" class="nino-icon"><i class="mdi mdi-pinterest"></i></a>
+									<a href="#" class="nino-icon"><i class="mdi mdi-instagram"></i></a>
+								</div>
+								<img src="images/our-team/img-1.jpg" alt="">
+							</div>
+						</div>
+						<div class="info">
+							<h4 class="name">Matthew Dix</h4>
+							<span class="regency">Graphic Design</span>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4">
+						<div class="item">
+							<div class="overlay" href="#">
+								<div class="content">
+									<a href="#" class="nino-icon"><i class="mdi mdi-facebook"></i></a>
+									<a href="#" class="nino-icon"><i class="mdi mdi-twitter"></i></a>
+									<a href="#" class="nino-icon"><i class="mdi mdi-pinterest"></i></a>
+									<a href="#" class="nino-icon"><i class="mdi mdi-instagram"></i></a>
+								</div>
+								<img src="images/our-team/img-2.jpg" alt="">
+							</div>
+						</div>
+						<div class="info">
+							<h4 class="name">Christopher Campbell</h4>
+							<span class="regency">Branding/UX design</span>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4">
+						<div class="item">
+							<div class="overlay" href="#">
+								<div class="content">
+									<a href="#" class="nino-icon"><i class="mdi mdi-facebook"></i></a>
+									<a href="#" class="nino-icon"><i class="mdi mdi-twitter"></i></a>
+									<a href="#" class="nino-icon"><i class="mdi mdi-pinterest"></i></a>
+									<a href="#" class="nino-icon"><i class="mdi mdi-instagram"></i></a>
+								</div>
+								<img src="images/our-team/img-3.jpg" alt="">
+							</div>
+						</div>
+						<div class="info">
+							<h4 class="name">Michael Fertig </h4>
+							<span class="regency">Developer</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section><!--/#nino-ourTeam-->
+
+	<!-- Brand
+    ================================================== -->
+    <section id="nino-brand">
+    	<div class="container">
+    		<div class="verticalCenter fw" layout="row">
+    			<div class="col-md-2 col-sm-4 col-xs-6"><a href="#"><img src="images/brand/img-1.png" alt=""></a></div>
+    			<div class="col-md-2 col-sm-4 col-xs-6"><a href="#"><img src="images/brand/img-2.png" alt=""></a></div>
+    			<div class="col-md-2 col-sm-4 col-xs-6"><a href="#"><img src="images/brand/img-3.png" alt=""></a></div>
+    			<div class="col-md-2 col-sm-4 col-xs-6"><a href="#"><img src="images/brand/img-4.png" alt=""></a></div>
+    			<div class="col-md-2 col-sm-4 col-xs-6"><a href="#"><img src="images/brand/img-5.png" alt=""></a></div>
+    			<div class="col-md-2 col-sm-4 col-xs-6"><a href="#"><img src="images/brand/img-6.png" alt=""></a></div>
+    		</div>
+    	</div>
+    </section><!--/#nino-brand-->
+
+	<!-- Portfolio
+    ================================================== -->
+	<section id="nino-portfolio">
+		<div class="container">
+			<h2 class="nino-sectionHeading">
+				<span class="nino-subHeading">What we do</span>
+				some of our work
+			</h2>
+			<p class="nino-sectionDesc">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+			</p>
+		</div>
+		<div class="sectionContent">
+			<ul class="nino-portfolioItems">
+				<li class="item">
+					<a class="nino-prettyPhoto" rel="prettyPhoto[gallery1]" title="Development Mobile" href="images/our-work/img-1.jpg">
+						<img src="images/our-work/img-1.jpg" />
+						<div class="overlay">
+							<div class="content">
+								<i class="mdi mdi-crown nino-icon"></i>
+								<h4 class="title">creatively designed</h4>
+								<span class="desc">Lorem ipsum dolor sit</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li class="item">
+					<a class="nino-prettyPhoto" rel="prettyPhoto[gallery1]" title="Development Mobile" href="images/our-work/img-2.jpg">
+						<img src="images/our-work/img-2.jpg" />
+						<div class="overlay">
+							<div class="content">
+								<i class="mdi mdi-cube-outline nino-icon"></i>
+								<h4 class="title">creatively designed</h4>
+								<span class="desc">Lorem ipsum dolor sit</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li class="item">
+					<a class="nino-prettyPhoto" rel="prettyPhoto[gallery1]" title="Development Mobile" href="images/our-work/img-3.jpg">
+						<img src="images/our-work/img-3.jpg" />
+						<div class="overlay">
+							<div class="content">
+								<i class="mdi mdi-desktop-mac nino-icon"></i>
+								<h4 class="title">creatively designed</h4>
+								<span class="desc">Lorem ipsum dolor sit</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li class="item">
+					<a class="nino-prettyPhoto" rel="prettyPhoto[gallery1]" title="Development Mobile" href="images/our-work/img-4.jpg">
+						<img src="images/our-work/img-4.jpg" />
+						<div class="overlay">
+							<div class="content">
+								<i class="mdi mdi-flower nino-icon"></i>
+								<h4 class="title">creatively designed</h4>
+								<span class="desc">Lorem ipsum dolor sit</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li class="item">
+					<a class="nino-prettyPhoto" rel="prettyPhoto[gallery1]" title="Development Mobile" href="images/our-work/img-5.jpg">
+						<img src="images/our-work/img-5.jpg" />
+						<div class="overlay">
+							<div class="content">
+								<i class="mdi mdi-gamepad-variant nino-icon"></i>
+								<h4 class="title">creatively designed</h4>
+								<span class="desc">Lorem ipsum dolor sit</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li class="item">
+					<a class="nino-prettyPhoto" rel="prettyPhoto[gallery1]" title="Development Mobile" href="images/our-work/img-6.jpg">
+						<img src="images/our-work/img-6.jpg" />
+						<div class="overlay">
+							<div class="content">
+								<i class="mdi mdi-gnome nino-icon"></i>
+								<h4 class="title">creatively designed</h4>
+								<span class="desc">Lorem ipsum dolor sit</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li class="item">
+					<a class="nino-prettyPhoto" rel="prettyPhoto[gallery1]" title="Development Mobile" href="images/our-work/img-7.jpg">
+						<img src="images/our-work/img-7.jpg" />
+						<div class="overlay">
+							<div class="content">
+								<i class="mdi mdi-guitar-electric nino-icon"></i>
+								<h4 class="title">creatively designed</h4>
+								<span class="desc">Lorem ipsum dolor sit</span>
+							</div>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</section><!--/#nino-portfolio-->
+
 	<!-- Testimonial
     ================================================== -->
     <section class="nino-testimonial bg-white">
@@ -118,7 +470,8 @@
     <section id="nino-happyClient">
     	<div class="container">
     		<h2 class="nino-sectionHeading">
-				Hi-TRIP 로그인
+				<span class="nino-subHeading">Happy Clients</span>
+				What people say
 			</h2>
 			<div class="sectionContent">
 				<div class="row">
@@ -383,6 +736,7 @@
 	<script type="text/javascript" src="../resources/js/jquery.mCustomScrollbar.concat.min.js"></script>
 	<script type="text/javascript" src="../resources/js/unslider-min.js"></script>
 	<script type="text/javascript" src="../resources/js/template.js"></script>
+	<script type="text/javascript" src="../resources/js/test.js?var=1"></script>
 
 	<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]>
