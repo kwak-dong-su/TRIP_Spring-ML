@@ -24,7 +24,7 @@
   
   const naverLogin = new naver.LoginWithNaverId(
    {
-    clientId: "n0kdjXCYJdG3WwDKAvfR",
+    clientId: "yourclientid",
     callbackUrl: "http://localhost:8080/trip/member/naverTest.jsp",
     loginButton: {color: "green", type: 2, height: 40}
     }
