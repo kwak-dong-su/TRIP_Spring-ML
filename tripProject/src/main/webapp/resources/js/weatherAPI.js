@@ -9,7 +9,6 @@ $(document).ready(function() {
                             var minutes = today.getMinutes();
                             var hours_al = new Array('02', '05', '08', '11', '14', '17', '20', '23');
                             var korea = [ {'region' : '서울','nx' : 60,'ny' : 127}, 
-                                {'region' : '인천','nx' : 55,'ny' : 124}, 
                                 {'region' : '경기도','nx' : 60,'ny' : 121}, 
                                 {'region' : '강원도','nx' : 92,'ny' : 131}, 
                                 {'region' : '충청북도','nx' : 69,'ny' : 106}, 
@@ -49,32 +48,38 @@ $(document).ready(function() {
                             }
  
                             today = year + "" + month + "" + day;
- 
+                            
+
                             /* 좌표 */
                             $.each(korea,function(j, k) {
-                                                var _nx = korea[j].nx, _ny = korea[j].ny, region = korea[j].region, 
-                                                apikey = "SqzSmUiDg98oXGI%2FCfXvLhwsTNYDJP9GLNvbwUasTqJmT19uBacY%2FqdWOgeHWAJtXXg%2Bce4UkqQ%2By68xvSREqg%3D%3D", 
-                                                ForecastGribURL = "http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtNcst";
-                                               ForecastGribURL += "?ServiceKey=" + apikey;
-                                                ForecastGribURL += "&base_date=" + today;
-                                                ForecastGribURL += "&base_time=" + now + "00";
-                                                ForecastGribURL += "&nx=" + _nx + "&ny=" + _ny;
-                                                arr.push({'url' : ForecastGribURL, 'region' : region});
+                            	var _nx = korea[j].nx, _ny = korea[j].ny, region = korea[j].region,
+                            	servicekey = "fXHE%2F%2B0Os5mkfzup7JRN4tQ02vjXoVpEmPPaEc1d%2F%2F9v51j04k3L9gAtyoPon07S3821Zcak2KiTz9XuAPja4A%3D%3D", 
+                            	ForecastGribURL = "http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst";
+                                ForecastGribURL += "?serviceKey=" +  servicekey;
+                                ForecastGribURL += "&base_date=" + today;
+                                ForecastGribURL += "&base_time=" + now + "00";
+                                ForecastGribURL += "&nx=" + _nx + "&ny=" + _ny;
+                                url1 = ''
+                                url1 += ForecastGribURL;
+                            	arr.push({'url' :url1, 'region' : region});
                                                 $.ajax({
-                                                            url : arr[j].url,
+                                                			url :  "CORS", // GetMapping("/CORS")을 이용하여 apiController.java로 값 전송
+                                                            data : {
+                                                            	"site" : arr[j].url,
+                                                            },
                                                             type : 'GET',
+                                                            dataType : 'xml',
                                                             success : function(data) {
                                                                 var $data = $(data).find("response>body>items>item");
                                                                 var cate = '';
                                                                 var temp = '';
                                                                 var sky = '';
                                                                 var rain = '';
- 
                                                                 $.each($data,function(i,o) {
                                                                                     cate = $(o).find("category").text(); // 카테고리 목록    
  
-                                                                                    if (cate == 'T3H') {
-                                                                                        temp = $(this).find("fcstValue").text(); // 3시간 온도
+                                                                                    if (cate == 'TMP') {
+                                                                                        temp = $(this).find("fcstValue").text(); // 1시간 온도
                                                                                     }
                                                                                     if (cate == 'SKY') {
                                                                                         sky = $(this).find("fcstValue").text(); // 하늘상태
@@ -88,7 +93,7 @@ $(document).ready(function() {
                                                                 $('.weather_li' + j).addClass('in' + j);
                                                                 $('.in' + j).html(temp + " ℃"); //온도 
                                                                 $('.in' + j).prepend(arr[j].region + '&emsp;'); // 지역이름
- 
+                                                                
                                                                 if (rain != 0) {
                                                                     switch (rain) {
                                                                     case '1':
@@ -124,7 +129,11 @@ $(document).ready(function() {
                                                                         break;
                                                                     }
                                                                 }//if 종료
-                                                            }//success func 종료
+                                                            },//success func 종료
+                                                            error : function(e){
+                                                            	console.log('에러발생');
+                                                            	console.log(e);
+                                                            }
                                                         });
                                             });
                         });

@@ -7,4 +7,8 @@
 		
 	</insert>
 
+	<select id="mainrand" resultType="placeVO">
+		(select * from place order by place_view desc  limit 4)order by rand();
+	</select>
+
 </mapper>

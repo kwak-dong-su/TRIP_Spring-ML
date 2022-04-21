@@ -1,5 +1,18 @@
 package com.hi.trip.place;
 
-public class PlaceDAO {
+import java.util.List;
 
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class PlaceDAO {
+	
+	@Autowired
+	SqlSessionTemplate my;
+	
+	public List<PlaceVO> randlist() {
+		return my.selectList("place.mainrand");
+	}
 }
