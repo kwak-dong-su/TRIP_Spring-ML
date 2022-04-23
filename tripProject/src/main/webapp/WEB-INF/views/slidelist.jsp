@@ -12,7 +12,6 @@
 		<c:set var="i" value="${i+1}" /> <!-- i변수 선언 -->
 		<c:choose> 
 		<c:when test="${i eq 1}"> <!-- if문 i 값이 1이면 출력 -->
-		<%-- <c:if test="${i eq 1}">  --%><!-- if문 i 값이 1이면 출력 -->
 			<div class="item active">
 				<h2 class="nino-sectionHeading">
 					<span class="nino-subHeading">${one.place_name}</span>
@@ -21,7 +20,7 @@
 				<a href="#" class="nino-btn">이동하기</a>
 			</div>
 			</c:when>
-		<%-- </c:if> --%>
+			
 		<c:otherwise> <!-- 1이 아니면 출력 -->
 		<div class="item">
 			<h2 class="nino-sectionHeading">

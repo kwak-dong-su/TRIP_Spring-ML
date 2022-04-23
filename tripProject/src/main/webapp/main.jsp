@@ -33,28 +33,30 @@
 	href="resources/css/prettyPhoto.css" />
 <link rel="stylesheet" type="text/css" href="resources/css/unslider.css" />
 <link rel="stylesheet" type="text/css" href="resources/css/template.css" />
+<link rel="stylesheet" type="text/css"
+	href="resources/css/slideshow.css" />
 
 </head>
 
 <body data-target="#nino-navbar" data-spy="scroll">
 
-<!-- Header
+	<!-- Header
     ================================================== -->
 	<header id="nino-header">
 		<div id="nino-headerInner">
 			<%
-				if (session.getAttribute("적을내용") == null) {
+				if (session.getAttribute("적을내용") == null) { // 세션에 있는 값이 ''이면 아래 출력
 			%>
 			<jsp:include page="header.jsp"></jsp:include>
 			<%
-				} else {
+				} else { // 아니면 아래 출력
 			%>
 			<jsp:include page="header2.jsp"></jsp:include>
 			<%
 				}
 			%>
-			<section id="nino-slider" class="carousel slide container" data-ride="carousel">
-			</section>
+			<section id="nino-slider" class="carousel slide container"
+				data-ride="carousel"></section>
 		</div>
 	</header>
 
@@ -67,61 +69,23 @@
 				<ul class="list-group list-group-flush weather"
 					style="font-weight: 600; display: table; margin-left: auto; margin-right: auto;">
 					<!-- <li class="list-group-item weather"></li> -->
+					<!-- ajax를 통해 이 안에 값을 불러온다. -->
 				</ul>
 			</div>
 		</div>
+
+
+
 	</section>
-	<!--/#nino-story-->
 
 	<!-- 추천수 top 3
     ================================================== -->
-	<section id="nino-story">
+	<section id="nino-uniqueDesign">
 		<div class="container">
 			<h2 class="nino-sectionHeading">추천 여행지 top3</h2>
 			<div class="sectionContent">
 				<div class="row nino-hoverEffect">
-					<div class="col-md-4 col-sm-4">
-						<div class="item">
-							<a class="overlay" href="#"> <span class="content"> <i
-									class="mdi mdi-account-multiple nino-icon"></i> super team
-							</span> <img src="resources/images/story/img-1.jpg" alt="">
-							</a>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-4">
-						<div class="item">
-							<a class="overlay" href="#"> <span class="content"> <i
-									class="mdi mdi-image-filter-center-focus-weak nino-icon"></i>
-									Creativity
-							</span> <img src="images/story/img-2.jpg" alt="">
-							</a>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-4">
-						<div class="item">
-							<a class="overlay" href="#"> <span class="content"> <i
-									class="mdi mdi-airplay nino-icon"></i> Digital
-							</span> <img src="images/story/img-3.jpg" alt="">
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--/#nino-story-->
-
-	<!-- Unique Design
-    ================================================== -->
-	<section id="nino-uniqueDesign">
-		<div class="container">
-			<h2 class="nino-sectionHeading">
-				<span class="nino-subHeading">For all devices</span> 써 먹을 방법이 있을까?
-			</h2>
-			<div class="sectionContent">
-				<div class="nino-devices">
-					<img class="tablet" src="images/unique-design/img-1.png" alt="">
-					<img class="mobile" src="images/unique-design/img-2.png" alt="">
+					<!-- ajax를 통해 이 안에 값을 불러온다. -->
 				</div>
 			</div>
 		</div>
@@ -129,107 +93,15 @@
 	<!--/#nino-uniqueDesign-->
 
 
-	<!-- Portfolio
+	<!-- 여행 경로 조회수  top3
     ================================================== -->
 	<section id="nino-portfolio">
 		<div class="container">
-			<h2 class="nino-sectionHeading">
-				<span class="nino-subHeading">What we do</span> some of our work
-			</h2>
-			<p class="nino-sectionDesc">Lorem ipsum dolor sit amet,
-				consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-				labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-				exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat.</p>
+			<h2 class="nino-sectionHeading">여행 경로 조회수 top3</h2>
 		</div>
-		<div class="sectionContent">
-			<ul class="nino-portfolioItems">
-				<li class="item"><a class="nino-prettyPhoto"
-					rel="prettyPhoto[gallery1]" title="Development Mobile"
-					href="images/our-work/img-1.jpg"> <img
-						src="resources/images/our-work/img-1.jpg" />
-						<div class="overlay">
-							<div class="content">
-								<i class="mdi mdi-crown nino-icon"></i>
-								<h4 class="title">creatively designed</h4>
-								<span class="desc">Lorem ipsum dolor sit</span>
-							</div>
-						</div>
-				</a></li>
-				<li class="item"><a class="nino-prettyPhoto"
-					rel="prettyPhoto[gallery1]" title="Development Mobile"
-					href="images/our-work/img-2.jpg"> <img
-						src="resources/images/our-work/img-2.jpg" />
-						<div class="overlay">
-							<div class="content">
-								<i class="mdi mdi-cube-outline nino-icon"></i>
-								<h4 class="title">creatively designed</h4>
-								<span class="desc">Lorem ipsum dolor sit</span>
-							</div>
-						</div>
-				</a></li>
-				<li class="item"><a class="nino-prettyPhoto"
-					rel="prettyPhoto[gallery1]" title="Development Mobile"
-					href="images/our-work/img-3.jpg"> <img
-						src="resources/images/our-work/img-3.jpg" />
-						<div class="overlay">
-							<div class="content">
-								<i class="mdi mdi-desktop-mac nino-icon"></i>
-								<h4 class="title">creatively designed</h4>
-								<span class="desc">Lorem ipsum dolor sit</span>
-							</div>
-						</div>
-				</a></li>
-				<li class="item"><a class="nino-prettyPhoto"
-					rel="prettyPhoto[gallery1]" title="Development Mobile"
-					href="images/our-work/img-4.jpg"> <img
-						src="resources/images/our-work/img-4.jpg" />
-						<div class="overlay">
-							<div class="content">
-								<i class="mdi mdi-flower nino-icon"></i>
-								<h4 class="title">creatively designed</h4>
-								<span class="desc">Lorem ipsum dolor sit</span>
-							</div>
-						</div>
-				</a></li>
-				<li class="item"><a class="nino-prettyPhoto"
-					rel="prettyPhoto[gallery1]" title="Development Mobile"
-					href="images/our-work/img-5.jpg"> <img
-						src="resources/images/our-work/img-5.jpg" />
-						<div class="overlay">
-							<div class="content">
-								<i class="mdi mdi-gamepad-variant nino-icon"></i>
-								<h4 class="title">creatively designed</h4>
-								<span class="desc">Lorem ipsum dolor sit</span>
-							</div>
-						</div>
-				</a></li>
-				<li class="item"><a class="nino-prettyPhoto"
-					rel="prettyPhoto[gallery1]" title="Development Mobile"
-					href="images/our-work/img-6.jpg"> <img
-						src="resources/images/our-work/img-6.jpg" />
-						<div class="overlay">
-							<div class="content">
-								<i class="mdi mdi-gnome nino-icon"></i>
-								<h4 class="title">creatively designed</h4>
-								<span class="desc">Lorem ipsum dolor sit</span>
-							</div>
-						</div>
-				</a></li>
-				<li class="item"><a class="nino-prettyPhoto"
-					rel="prettyPhoto[gallery1]" title="Development Mobile"
-					href="images/our-work/img-7.jpg"> <img
-						src="resources/images/our-work/img-7.jpg" />
-						<div class="overlay">
-							<div class="content">
-								<i class="mdi mdi-guitar-electric nino-icon"></i>
-								<h4 class="title">creatively designed</h4>
-								<span class="desc">Lorem ipsum dolor sit</span>
-							</div>
-						</div>
-				</a></li>
-			</ul>
-		</div>
+		<!-- Container for the image gallery -->
+		<div id="d1"></div>
+
 	</section>
 	<!--/#nino-portfolio-->
 
@@ -332,18 +204,34 @@
 	<script type="text/javascript" src="resources/js/unslider-min.js"></script>
 	<script type="text/javascript" src="resources/js/template.js"></script>
 	<script type="text/javascript" src="resources/js/weatherAPI.js?var=1"></script>
-
+	
 	<script type="text/javascript">
 		$(function() {
 			$.ajax({
-				url : "mainlist",
+				url : "slidelist",
 				success : function(result) {
 					$('#nino-slider').html(result);
 				}
 			});
+
+			$.ajax({
+				url : "likelist",
+				success : function(result) {
+					$('.nino-hoverEffect').html(result);
+				}
+			});
+
+			$.ajax({
+				url : "slideshow",
+				success : function(result) {
+					console.log(result)
+					$('#d1').html(result);
+				}
+			});
 		});
 	</script>
-
+	<script type="text/javascript" src="resources/js/slideshow.js"></script>
+	
 
 	<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]>
@@ -353,5 +241,6 @@
 	<!--[if lt IE 9]>
 	    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 	<![endif]-->
+	
 </body>
 </html>

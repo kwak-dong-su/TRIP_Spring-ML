@@ -12,7 +12,10 @@ public class PlaceDAO {
 	@Autowired
 	SqlSessionTemplate my;
 	
-	public List<PlaceVO> randlist() {
-		return my.selectList("place.mainrand");
+	public List<PlaceVO> slidelist() {
+		return my.selectList("place.slidelist");
+	}
+	public List<PlaceVO> likelist() {
+		return my.selectList("place.likelist");
 	}
 }

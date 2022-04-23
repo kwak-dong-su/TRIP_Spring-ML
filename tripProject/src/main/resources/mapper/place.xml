@@ -7,8 +7,12 @@
 		
 	</insert>
 
-	<select id="mainrand" resultType="placeVO">
-		(select * from place order by place_view desc  limit 4)order by rand();
+	<select id="slidelist" resultType="placeVO">
+		select * from place order by place_view desc limit 5;
+	</select>
+	
+	<select id="likelist" resultType="placeVO">
+		select * from place order by place_like desc limit 3;
 	</select>
 
 </mapper>

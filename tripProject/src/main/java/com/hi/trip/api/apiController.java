@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class apiController {
 
 	@ResponseBody
-	@GetMapping("/CORS")
+	@GetMapping("/weather")
 	public StringBuilder fetchPublicWeatherData(String site) throws Exception {
 		// weatherAPI.js에서 불러온 값을 site 변수에 넣어서 url에 넣고 그 url을 API서버에 보낸 후 값을 가지고 온 후 다시 weatherAPI.js로 보낸다.
 //		String servicekey= "?serviceKey=fXHE%2F%2B0Os5mkfzup7JRN4tQ02vjXoVpEmPPaEc1d%2F%2F9v51j04k3L9gAtyoPon07S3821Zcak2KiTz9XuAPja4A%3D%3D";

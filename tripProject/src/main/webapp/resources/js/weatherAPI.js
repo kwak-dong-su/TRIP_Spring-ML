@@ -63,7 +63,7 @@ $(document).ready(function() {
                                 url1 += ForecastGribURL;
                             	arr.push({'url' :url1, 'region' : region});
                                                 $.ajax({
-                                                			url :  "CORS", // GetMapping("/CORS")을 이용하여 apiController.java로 값 전송
+                                                			url :  "weather", // GetMapping("/CORS")을 이용하여 apiController.java로 값 전송
                                                             data : {
                                                             	"site" : arr[j].url,
                                                             },
