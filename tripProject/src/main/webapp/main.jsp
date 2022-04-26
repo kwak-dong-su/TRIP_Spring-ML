@@ -36,6 +36,49 @@
 <link rel="stylesheet" type="text/css"
 	href="resources/css/slideshow.css" />
 
+	<!-- javascript -->
+	<script type="text/javascript" src="resources/js/jquery.min.js"></script>
+	<script type="text/javascript" src="resources/js/isotope.pkgd.min.js"></script>
+	<script type="text/javascript" src="resources/js/jquery.prettyPhoto.js"></script>
+	<script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="resources/js/jquery.hoverdir.js"></script>
+	<script type="text/javascript"
+		src="resources/js/modernizr.custom.97074.js"></script>
+	<script type="text/javascript"
+		src="resources/js/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script type="text/javascript" src="resources/js/unslider-min.js"></script>
+	<script type="text/javascript" src="resources/js/template.js"></script>
+	<script type="text/javascript" src="resources/js/weatherAPI.js?var=1"></script>
+	
+	<script type="text/javascript">
+		$(function() {
+			$.ajax({
+				url : "slidelist",
+				success : function(result) {
+					$('#nino-slider').html(result);
+				}
+			});
+
+			$.ajax({
+				url : "likelist",
+				success : function(result) {
+					$('.nino-hoverEffect').html(result);
+				}
+			});
+
+			$.ajax({
+				url : "slideshow",
+				success : function(result) {
+					console.log(result)
+					$('#d1').html(result);
+				}
+			});
+		});
+	</script>
+
+
+
+
 </head>
 
 <body data-target="#nino-navbar" data-spy="scroll">
@@ -73,9 +116,6 @@
 				</ul>
 			</div>
 		</div>
-
-
-
 	</section>
 
 	<!-- 추천수 top 3
@@ -90,7 +130,6 @@
 			</div>
 		</div>
 	</section>
-	<!--/#nino-uniqueDesign-->
 
 
 	<!-- 여행 경로 조회수  top3
@@ -103,7 +142,6 @@
 		<div id="d1"></div>
 
 	</section>
-	<!--/#nino-portfolio-->
 
 	<!-- Happy Client
     ================================================== -->
@@ -186,51 +224,11 @@
 	</section>
 	<!--/#nino-happyClient-->
 
-
 	<!-- Scroll to top
     ================================================== -->
 	<a href="#" id="nino-scrollToTop">Go to Top</a>
 
-	<!-- javascript -->
-	<script type="text/javascript" src="resources/js/jquery.min.js"></script>
-	<script type="text/javascript" src="resources/js/isotope.pkgd.min.js"></script>
-	<script type="text/javascript" src="resources/js/jquery.prettyPhoto.js"></script>
-	<script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="resources/js/jquery.hoverdir.js"></script>
-	<script type="text/javascript"
-		src="resources/js/modernizr.custom.97074.js"></script>
-	<script type="text/javascript"
-		src="resources/js/jquery.mCustomScrollbar.concat.min.js"></script>
-	<script type="text/javascript" src="resources/js/unslider-min.js"></script>
-	<script type="text/javascript" src="resources/js/template.js"></script>
-	<script type="text/javascript" src="resources/js/weatherAPI.js?var=1"></script>
-	
-	<script type="text/javascript">
-		$(function() {
-			$.ajax({
-				url : "slidelist",
-				success : function(result) {
-					$('#nino-slider').html(result);
-				}
-			});
 
-			$.ajax({
-				url : "likelist",
-				success : function(result) {
-					$('.nino-hoverEffect').html(result);
-				}
-			});
-
-			$.ajax({
-				url : "slideshow",
-				success : function(result) {
-					console.log(result)
-					$('#d1').html(result);
-				}
-			});
-		});
-	</script>
-	<script type="text/javascript" src="resources/js/slideshow.js"></script>
 	
 
 	<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->

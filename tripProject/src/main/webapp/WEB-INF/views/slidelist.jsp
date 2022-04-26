@@ -8,29 +8,33 @@
 <!-- Wrapper for slides -->
 <!-- 슬라이더 글자 부분 -->
 <div class="carousel-inner" role="listbox">
-	<c:forEach items="${list}" var="one"> <!-- 반복문 -->
-		<c:set var="i" value="${i+1}" /> <!-- i변수 선언 -->
-		<c:choose> 
-		<c:when test="${i eq 1}"> <!-- if문 i 값이 1이면 출력 -->
-			<div class="item active">
-				<h2 class="nino-sectionHeading">
-					<span class="nino-subHeading">${one.place_name}</span>
-					<img src="${one.place_img}" alt="">이미지
-				</h2>
-				<a href="#" class="nino-btn">이동하기</a>
-			</div>
+	<c:forEach items="${list}" var="one">
+		<!-- 반복문 -->
+		<c:set var="i" value="${i+1}" />
+		<!-- i변수 선언 -->
+		<c:choose>
+			<c:when test="${i eq 1}">
+				<!-- if문 i 값이 1이면 출력 -->
+				<div class="item active">
+					<h2 class="nino-sectionHeading">
+						<span class="nino-subHeading">${one.place_name}</span> <img
+							src="${one.place_img}" alt="">이미지
+					</h2>
+					<a href="#" class="nino-btn">이동하기</a>
+				</div>
 			</c:when>
-			
-		<c:otherwise> <!-- 1이 아니면 출력 -->
-		<div class="item">
-			<h2 class="nino-sectionHeading">
-				<span class="nino-subHeading">${one.place_name}</span>
-				<img src="${one.place_img}" alt="">이미지
-			</h2>
-			<a href="#" class="nino-btn">이동하기</a>
-		</div>
-		 </c:otherwise>
-		 </c:choose>
+
+			<c:otherwise>
+				<!-- 1이 아니면 출력 -->
+				<div class="item">
+					<h2 class="nino-sectionHeading">
+						<span class="nino-subHeading">${one.place_name}</span> <img
+							src="${one.place_img}" alt="">이미지
+					</h2>
+					<a href="#" class="nino-btn">이동하기</a>
+				</div>
+			</c:otherwise>
+		</c:choose>
 	</c:forEach>
 </div>
 

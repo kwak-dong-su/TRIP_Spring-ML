@@ -3,7 +3,7 @@
 }
 
 /* Position the image container (needed to position the left and right arrows) */
-.slidecontainer {
+.slidecontainer1 {
   position: relative;
   width: 50%;
   margin-left: auto;
@@ -11,8 +11,33 @@
   text-align: center;
 }
 
+.slidecontainer2 {
+  position: relative;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.slidecontainer3 {
+  position: relative;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+
+
+
 /* Hide the images by default */
-.mySlides {
+.mySlides1 {
+  display: none;
+}
+.mySlides2 {
+  display: none;
+}
+.mySlides3 {
   display: none;
 }
 
@@ -71,6 +96,27 @@
   color: white;
 }
 
+.caption-container1 {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.caption-container2 {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.caption-container3 {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
 .slidrow:after {
   content: "";
   display: table;
@@ -84,11 +130,25 @@
 }
 
 /* Add a transparency effect for thumnbail images */
-.demo {
+.demo1 {
+  opacity: 0.6;
+}
+.demo2 {
+  opacity: 0.6;
+}
+.demo3 {
   opacity: 0.6;
 }
 
-.active,
-.demo:hover {
+.active1,
+.demo1:hover {
+  opacity: 1;
+}
+.active2,
+.demo2:hover {
+  opacity: 1;
+}
+.active3,
+.demo3:hover {
   opacity: 1;
 }
