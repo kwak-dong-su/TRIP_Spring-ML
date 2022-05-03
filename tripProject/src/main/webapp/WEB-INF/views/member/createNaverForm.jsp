@@ -30,10 +30,23 @@
 <script type="text/javascript" src="../resources/js/jquery-3.6.0.min.js"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
-alert("가입 정보가 없습니다. 회원가입 페이지로 이동합니다.")
-console.log('${vo}')
+alert("가입을 위해 필수 정보를 입력해주세요.")
 
 $(function(){
+	
+	if(${vo.member_gender}==1)
+	{
+		$('#member_gender_M').attr('checked', 'True');
+		$('#member_gender_F').attr('disabled', 'True');
+	}
+	else
+	{
+		$('#member_gender_M').attr('disabled', 'True');
+		$('#member_gender_F').attr('checked', 'True');
+	}
+	document.getElementById("member_birth").value='${vo.member_birth}'
+	document.getElementById("member_naver_token").value='${vo.member_naver_token}'
+	
 	
 	$('#find_addr').click(function(){
 		new daum.Postcode({
@@ -71,7 +84,7 @@ $(function(){
 			$.ajax({
 				url: "nameCheck" ,
 				data: {
-					name : $('#member_name').val()
+					member_name : $('#member_name').val()
 				},
 				success: function(result){
 					console.log(result)
@@ -81,8 +94,8 @@ $(function(){
 						if(confirm("이 닉네임을 사용하시겠습니까?"))
 							{
 								$('#member_name').attr('readonly', 'true')
-								$('#member_name').attr('style', 'background-color:lightgreen;')
-								idChecked=1;
+								$('#member_name').attr('style', 'background-color: mistyrose;')
+								nameChecked=1;
 							}
 					}
 					else
@@ -108,16 +121,10 @@ $(function(){
              $('#member_name').focus();
              return;
          }
-         else if($('#member_gender').is(':checked')==false)
+         else if(nameChecked==0)
          {
-        	 alert("성별 항목에 체크해주세요.");
-             $('#member_gender').focus();
-             return;
-         }
-         else if($('#member_birth').val()=="")
-         {
-        	 alert("생년 월일을 입력해주세요.");
-             $('#member_birth').focus();
+        	 alert("닉네임을 중복 확인해주세요.");
+             $('#member_name').focus();
              return;
          }
          else if($('#addr_first').val()=="")
@@ -137,7 +144,7 @@ $(function(){
              
          }
          
-         $('#member_addr').val($('#addr_first').val()+' '+$('#addr_last').val());
+         $('#member_addr').val($('#addr_first').val()+', '+$('#addr_last').val());
          console.log($('#member_addr').val());
          $("form").submit();
          
@@ -145,6 +152,61 @@ $(function(){
          
 })
 </script>
+<style>
+
+table {
+    margin-left:auto; 
+    margin-right:auto;
+}
+
+table, td, th {
+    border-collapse : collapse;
+    text-align: left;
+};
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: rgb(234, 168, 134);
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+    width: 600px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid rgb(234, 168, 134);
+}
+
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: black;
+    font-size: 25px;
+}
+button{
+	background-color: rgb(234, 168, 134);
+	color: #ffffff; 
+}
+</style>
 </head>
 <body>
 
@@ -153,11 +215,11 @@ $(function(){
 			<%
 				if (session.getAttribute("member_name") == null) {
 			%>
-			<jsp:include page="../header.jsp"></jsp:include>
+			<jsp:include page="../../../header.jsp"></jsp:include>
 			<%
 				} else {
 			%>
-			<jsp:include page="../header2.jsp"></jsp:include>
+			<jsp:include page="../../../header2.jsp"></jsp:include>
 			<%
 				}
 			%>
@@ -165,18 +227,67 @@ $(function(){
 	</header>
 
 	
-	<h3>네이버 계정으로 회원가입</h3>
+	<!-- <h3>네이버 계정으로 회원가입</h3>
 	<form action="createMember">
 		닉네임 : <input type="text" name="member_name" id="member_name"> <button type="button" id="nameCheck" >닉네임 확인</button><br>
-		성별 <label><input type="radio" name="member_gender" id="member_gender" value="1"> 남</label>
-      		 <label><input type="radio" name="member_gender" id="member_gender" value="2"> 여</label><br>
-		생년월일: <input type='date' name='member_birth' id='member_birth' value=><br>
+		성별 <label><input type="radio" name="member_gender" id="member_gender_M" value="1" onclick="return(false);" > 남</label>
+      		 <label><input type="radio" name="member_gender" id="member_gender_F" value="2" onclick="return(false);" > 여</label><br>
+		생년월일: <input type='date' name='member_birth' id='member_birth' readonly><br>
 		주소:<br>
   		<input name="addr_first" id="addr_first" type="text" placeholder="주소" readonly> <button id="find_addr" type="button">주소 찾기</button><br>
   		<input name="addr_last" id="addr_last" type="text" placeholder="상세 주소"><br>
   		<input name="member_addr" id="member_addr" type="hidden">
-  		<input name="member_type" id="member_type" type="hidden" value="1">
+  		<input name="member_type" id="member_type" type="hidden" value="2">
+  		<input name="member_naver_token" id="member_naver_token" type="hidden">
 		<button type="button" id="formCheck">가입</button>
-	</form>
+	</form> -->
+	
+	
+	<br>
+	<br>
+	<br>
+	<br>
+	<form action="createMember">
+	<table id="member_table" class="styled-table">
+    <thead>
+        <tr>
+            <th colspan="2" style="font-size: 30px;">네이버 계정으로 가입</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="active-row">
+            <th>닉네임</th>
+            <td><input type="text" name="member_name" id="member_name"> <button type="button" id="nameCheck" >닉네임 확인</button></td>
+        </tr>
+        <tr class="active-row">
+            <th>성별</th>
+            <td> <label><input type="radio" name="member_gender" id="member_gender_M" value="1" onclick="return(false);" > 남</label>
+      		 <label><input type="radio" name="member_gender" id="member_gender_F" value="2" onclick="return(false);" > 여</label></td>
+        </tr>
+        <tr class="active-row">
+            <th>생년월일</th>
+            <td><input type='date' name='member_birth' id='member_birth' readonly></td>
+        </tr>
+        <tr class="active-row">
+            <th>주소</th>
+            <td><input name="addr_first" id="addr_first" type="text" placeholder="주소" readonly> <button id="find_addr" type="button">주소 찾기</button></td>
+        </tr>
+        <tr class="active-row">
+            <th>상세 주소</th>
+            <td><input name="addr_last" id="addr_last" type="text" placeholder="상세 주소"></td>
+        </tr>
+        <tr>
+            <th colspan="2" style="font-size: 30px; text-align: center;">
+            <input name="member_addr" id="member_addr" type="hidden">
+  			<input name="member_type" id="member_type" type="hidden" value="2">
+  			<input name="member_naver_token" id="member_naver_token" type="hidden">
+			<button type="button" id="formCheck">회원가입</button>
+            </th>
+        </tr>
+        
+    </tbody>
+</table>
+</form>
+
 </body>
 </html>

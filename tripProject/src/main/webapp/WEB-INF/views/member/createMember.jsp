@@ -8,7 +8,7 @@
 </head>
 <script type="text/javascript">
 	alert("회원 가입이 완료되었습니다.")
-	location.href="createMemberForm.jsp"
+	location.href="../main.jsp"
 </script>
 <body>
 </body>

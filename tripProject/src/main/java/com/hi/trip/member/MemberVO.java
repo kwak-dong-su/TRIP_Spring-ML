@@ -1,16 +1,16 @@
 package com.hi.trip.member;
 
 public class MemberVO {
-	int member_idx;
-	String member_id;
-	String member_pw;
-	String member_name;
-	String member_birth;
-	String member_addr;
-	int member_gender;
-	String member_naver_token;
-	String member_google_token;
-	int member_type;
+	private int member_idx;
+	private String member_id;
+	private String member_pw;
+	private String member_name;
+	private String member_birth;
+	private String member_addr;
+	private int member_gender;
+	private String member_naver_token;
+	private String member_google_token;
+	private int member_type;
 	
 	public int getMember_idx() {
 		return member_idx;

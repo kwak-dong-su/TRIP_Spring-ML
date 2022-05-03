@@ -27,7 +27,6 @@
 	<link rel="stylesheet" type="text/css" href="resources/css/template.css" />
 	
 </head>
-
 <body data-target="#nino-navbar" data-spy="scroll">
 <header id="nino-header">
 <div id="nino-headerInner">	
@@ -44,8 +43,7 @@
 				<div class="carousel-inner" role="listbox">
 					<div class="item active">
 						<h2 class="nino-sectionHeading">
-							<span class="nino-subHeading">여행지 랜덤</span>
-							추찬 칸 <br>과연 ...
+							<img src="https://1kdsbucket.s3.us-west-1.amazonaws.com/%EC%A0%9C%EC%A3%BC%EB%8F%84_%EB%9A%9C%EB%B2%85%EC%9D%B4_%EC%97%AC%ED%96%89.jpg">
 						</h2>
 						<a href="#" class="nino-btn">이동하기</a>
 					</div>
@@ -99,6 +97,7 @@
 			</section>
 			</div>
 </header>
+
 	<!-- Story About Us
     ================================================== -->
 	<section id="nino-story">
