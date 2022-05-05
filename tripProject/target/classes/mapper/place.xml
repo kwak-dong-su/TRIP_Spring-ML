@@ -8,7 +8,7 @@
 	</insert>
 
 	<select id="slidelist" resultType="placeVO">
-		select * from place order by place_view desc limit 5;
+		(select * from place order by place_view desc  limit 10)order by rand() limit 5;
 	</select>
 	
 	<select id="likelist" resultType="placeVO">

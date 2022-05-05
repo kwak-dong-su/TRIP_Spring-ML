@@ -17,8 +17,8 @@
 				<!-- if문 i 값이 1이면 출력 -->
 				<div class="item active">
 					<h2 class="nino-sectionHeading">
-						<span class="nino-subHeading">${one.place_name}</span> <img
-							src="${one.place_img}" alt="">이미지
+						<span class="nino-subHeading">${one.place_info}</span> <img
+							src="${one.place_img}" alt="">
 					</h2>
 					<a href="#" class="nino-btn">이동하기</a>
 				</div>
@@ -28,8 +28,8 @@
 				<!-- 1이 아니면 출력 -->
 				<div class="item">
 					<h2 class="nino-sectionHeading">
-						<span class="nino-subHeading">${one.place_name}</span> <img
-							src="${one.place_img}" alt="">이미지
+						<span class="nino-subHeading">${one.place_info}</span> <img
+							src="${one.place_img}" alt="">
 					</h2>
 					<a href="#" class="nino-btn">이동하기</a>
 				</div>
@@ -46,7 +46,7 @@
 		<c:set var="n" value="${n+1}" />
 		<li data-target="#nino-slider" data-slide-to="${n-1}" class="active">
 			<div class="inner">
-				<span class="number">0${n}</span>${one.place_name}
+				<span class="number">0${n}</span>${one.place_info}
 			</div>
 		</li>
 	</c:forEach>

@@ -11,10 +11,9 @@
 	<div class="col-md-4 col-sm-4">
 		<div class="item">
 			<a class="overlay" href="#"> <span class="content">
-					<h3>${one.place_name}</h3> <br>
+					<h3>${one.place_info}</h3> <br>
 					<h3>추천 수 : ${one.place_like}명</h3>
-			</span> <%-- <img src="${one.place_img}" alt="">  --%> <img
-				src="resources/images/story/img-1.jpg" alt="">
+			</span> <img src="${one.place_img}" alt="">
 			</a>
 		</div>
 	</div>
