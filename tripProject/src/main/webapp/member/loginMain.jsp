@@ -103,7 +103,7 @@
       gapi.load('auth2', function(){
         // Retrieve the singleton for the GoogleAuth library and set up the client.
         auth2 = gapi.auth2.init({
-          client_id: 'yourid.apps.googleusercontent.com',
+          client_id: '166227979625-2oeo9jd7muj3rspks8npeo3t07on6vg8.apps.googleusercontent.com',
           cookiepolicy: 'single_host_origin',
           // Request scopes in addition to 'profile' and 'email'
           //scope: 'additional_scope'
@@ -214,8 +214,8 @@
 <script type="text/javascript">
 var naverLogin = new naver.LoginWithNaverId(
 		   {
-		    clientId: "yourid",
-		    callbackUrl: "http://localhost:8080/trip/member/loginMain.jsp",
+		    clientId: "n0kdjXCYJdG3WwDKAvfR",
+		    callbackUrl: "<%=request.getRequestURL()%>",
 		    loginButton: {color: "green", type: 2, height: 40}
 		    }
 		   );

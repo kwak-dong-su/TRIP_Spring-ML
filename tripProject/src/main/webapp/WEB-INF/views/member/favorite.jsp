@@ -165,8 +165,8 @@ div{
     			
     		<td style="text-align: left;">
     		<script>console.log('${one}')</script>
-    		${one.place_name}
-    		<p>(이미지)</p>
+    		${one.place_info}
+    		<p>${one.place_img}(이미지)</p>
     		<p><a href="#" onclick="location.href='/trip/member/deleteFavorite?favorite_idx=${list.get(status.index).favorite_idx}'">삭제</a>		
     		</td>
     		
