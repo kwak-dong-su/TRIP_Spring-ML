@@ -11,6 +11,15 @@
 		#{member_addr}, #{member_gender}, #{member_naver_token}, #{member_google_token}, #{member_type})
 	</insert>
 	
+	<update id="update" parameterType="memberVO">
+		update member set member_pw=#{member_pw}, member_name=#{member_name}, member_addr=#{member_addr}
+		where member_idx=#{member_idx}
+	</update>
+	
+	<select id="oneIdx" parameterType="memberVO" resultType="memberVO">
+		select * from member where member_idx=#{member_idx}
+	</select>
+	
 	<select id="oneId" parameterType="memberVO" resultType="memberVO">
 		select * from member where member_id=#{member_id}
 	</select>

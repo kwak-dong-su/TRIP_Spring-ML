@@ -24,9 +24,65 @@
 	<link rel="stylesheet" type="text/css" href="../resources/css/template.css" />
 
 <title>회원가입</title>
+<style>
+
+table {
+    margin-left:auto; 
+    margin-right:auto;
+}
+
+table, td, th {
+    border-collapse : collapse;
+    text-align: left;
+};
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: rgb(234, 168, 134);
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+    width: 600px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid rgb(234, 168, 134);
+}
+
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: black;
+    font-size: 25px;
+}
+button{
+	background-color: rgb(234, 168, 134);
+	color: #ffffff; 
+}
+</style>
 <script type="text/javascript" src="../resources/js/jquery-3.6.0.min.js"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
+
 $(function(){
 	
 	$('#find_addr').click(function(){
@@ -70,7 +126,7 @@ $(function(){
 			$.ajax({
 				url: "idCheck" ,
 				data: {
-					id : $('#member_id').val()
+					member_id : $('#member_id').val()
 				},
 				success: function(result){
 					console.log(result)
@@ -80,7 +136,7 @@ $(function(){
 						if(confirm("이 아이디를 사용하시겠습니까?"))
 							{
 								$('#member_id').attr('readonly', 'true')
-								$('#member_id').attr('style', 'background-color:lightgreen;')
+								$('#member_id').attr('style', 'background-color: mistyrose;')
 								idChecked=1;
 							}
 					}
@@ -111,7 +167,7 @@ $(function(){
 			$.ajax({
 				url: "nameCheck" ,
 				data: {
-					name : $('#member_name').val()
+					member_name : $('#member_name').val()
 				},
 				success: function(result){
 					console.log(result)
@@ -121,8 +177,8 @@ $(function(){
 						if(confirm("이 닉네임을 사용하시겠습니까?"))
 							{
 								$('#member_name').attr('readonly', 'true')
-								$('#member_name').attr('style', 'background-color:lightgreen;')
-								idChecked=1;
+								$('#member_name').attr('style', 'background-color: mistyrose;')
+								nameChecked=1;
 							}
 					}
 					else
@@ -180,10 +236,15 @@ $(function(){
              $('#member_name').focus();
              return;
          }
-         else if($('#member_gender').is(':checked')==false)
+         else if(nameChecked==0)
+         {
+        	 alert("닉네임을 중복 확인해주세요.");
+             $('#member_name').focus();
+             return;
+         }
+         else if($('#member_gender_M').is(':checked')==false&&$('#member_gender_F').is(':checked')==false)
          {
         	 alert("성별 항목에 체크해주세요.");
-             $('#member_gender').focus();
              return;
          }
          else if($('#member_birth').val()=="")
@@ -209,7 +270,7 @@ $(function(){
              
          }
          
-         $('#member_addr').val($('#addr_first').val()+' '+$('#addr_last').val());
+         $('#member_addr').val($('#addr_first').val()+', '+$('#addr_last').val());
          console.log($('#member_addr').val());
          $("form").submit();
          
@@ -236,7 +297,7 @@ $(function(){
 		</div>
 	</header>
 
-	<h3>Hi TRIP으로 가입</h3>
+	<!-- <h3>Hi TRIP으로 가입</h3>
 	<form action="createMember">
 		아이디: <input type="text" name="member_id" id="member_id"> <button type="button" id="idCheck" >아이디 확인</button><br>
 		비밀번호: <input type="password" name="member_pw" id="member_pw"><br>
@@ -251,6 +312,63 @@ $(function(){
   		<input name="member_addr" id="member_addr" type="hidden">
   		<input name="member_type" id="member_type" type="hidden" value="1">
 		<button type="button" id="formCheck">가입</button>
-	</form>
+	</form> -->
+	
+	<br>
+	<br>
+	<br>
+	<br>
+	<form action="createMember">
+	<table id="member_table" class="styled-table">
+    <thead>
+        <tr>
+            <th colspan="2" style="font-size: 30px;">HITRIP 회원 가입</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="active-row">
+            <th>아이디</th>
+            <td><input type="text" name="member_id" id="member_id"> <button type="button" id="idCheck" >아이디 확인</button></td>
+        </tr>
+        <tr class="active-row">
+            <th>비밀번호</th>
+            <td><input type="password" name="member_pw" id="member_pw"></td>
+        </tr>
+        <tr class="active-row">
+            <th>비밀번호 확인</th>
+            <td><input type="password" name="pwCheck" id="pwCheck"></td>
+        </tr>
+        <tr class="active-row">
+            <th>닉네임</th>
+            <td><input type="text" name="member_name" id="member_name"> <button type="button" id="nameCheck" >닉네임 확인</button></td>
+        </tr>
+        <tr class="active-row">
+            <th>성별</th>
+            <td><label><input type="radio" name="member_gender" id="member_gender_M" value="1"> 남</label>
+      		 <label><input type="radio" name="member_gender" id="member_gender_F" value="2"> 여</label></td>
+        </tr>
+        <tr class="active-row">
+            <th>생년월일</th>
+            <td><input type='date' name='member_birth' id='member_birth'></td>
+        </tr>
+        <tr class="active-row">
+            <th>주소</th>
+            <td><input name="addr_first" id="addr_first" type="text" placeholder="주소" readonly> <button id="find_addr" type="button">주소 찾기</button></td>
+        </tr>
+        <tr class="active-row">
+            <th>상세 주소</th>
+            <td><input name="addr_last" id="addr_last" type="text" placeholder="상세 주소"></td>
+        </tr>
+        <tr>
+            <th colspan="2" style="font-size: 30px; text-align: center;">
+            <input name="member_addr" id="member_addr" type="hidden">
+  			<input name="member_type" id="member_type" type="hidden" value="1">
+			<button type="button" id="formCheck">회원가입</button>
+            </th>
+        </tr>
+        <!-- and so on... -->
+    </tbody>
+</table>
+</form>
 </body>
 </html>

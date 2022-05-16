@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+   <typeAliases>
+      <typeAlias type="com.hi.trip.placeComment.ReviewVO" alias="ReviewVO"></typeAlias>
+      <typeAlias type="com.hi.trip.place.PlaceVO" alias="PlaceVO"></typeAlias>
+        </typeAliases>
+   
+   <mappers>
+      
+      <mapper resource="mapper/place.xml" />
+  	 <mapper resource="mapper/review.xml" />
+     <!--   <mapper resource="mapper/review.xml" />
+     <mapper resource="mapper/movie.xml" />  -->
+   </mappers>
+</configuration>

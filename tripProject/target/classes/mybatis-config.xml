@@ -5,6 +5,8 @@
 <configuration>
    <typeAliases>
       <typeAlias type="com.hi.trip.member.MemberVO" alias="memberVO"></typeAlias>
+      <typeAlias type="com.hi.trip.member.MemberStatisticsVO" alias="memberstatisticsVO"></typeAlias>
+      <typeAlias type="com.hi.trip.member.FavoriteVO" alias="favoriteVO"></typeAlias>
       <typeAlias type="com.hi.trip.itinerary.ItineraryVO" alias="itineraryVO"></typeAlias>
       <typeAlias type="com.hi.trip.itineraryComment.ItineraryCommentVO" alias="itineraryCommentVO"></typeAlias>
       <typeAlias type="com.hi.trip.place.PlaceVO" alias="placeVO"></typeAlias>
@@ -17,6 +19,8 @@
    
    <mappers>
       <mapper resource="mapper/member.xml" />
+      <mapper resource="mapper/memberstatistics.xml" />
+      <mapper resource="mapper/favorite.xml" />
       <mapper resource="mapper/itinerary.xml" />
       <mapper resource="mapper/itineraryComment.xml" />
       <mapper resource="mapper/place.xml" />

@@ -4,7 +4,11 @@
 
 <mapper namespace="itinerary">
 	<insert id="create" parameterType="itineraryVO">
-		
+
 	</insert>
+
+	<select id="slideshow" resultType="itineraryVO">
+		select * from itinerary order by itinerary_view desc limit 3;
+	</select>
 
 </mapper>
