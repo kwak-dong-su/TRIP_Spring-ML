@@ -273,7 +273,7 @@ img.img-full-width {
 #nino-slider .carousel-indicators li,
 #nino-slider .carousel-indicators li.active {
 	float: left;
-	width: 25%;
+	width: 20%;
 	height: auto;
 	margin: 0;	
 	text-indent: initial;
