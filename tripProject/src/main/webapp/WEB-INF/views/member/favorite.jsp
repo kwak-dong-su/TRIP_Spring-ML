@@ -99,6 +99,21 @@ button{
 div{
 	text-align: center;
 }
+.btn {
+    position: relative;
+    height: 30px;
+    background: #eee linear-gradient(to bottom, #fcfcfc, #eee);
+    border: 1px solid #d5d5d5;
+    border-radius: 4px;
+    display: inline-flex; 
+    align-items: center;
+    padding: 0 12px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+    cursor: pointer;
+    box-sizing: border-box;
+}
 
 </style>
 </head>
@@ -164,10 +179,10 @@ div{
         <c:forEach var="one" items="${list2}" varStatus="status">
     			
     		<td style="text-align: left;">
-    		<script>console.log('${one}')</script>
-    		${one.place_info}
-    		<p>${one.place_img}(이미지)</p>
-    		<p><a href="#" onclick="location.href='/trip/member/deleteFavorite?favorite_idx=${list.get(status.index).favorite_idx}'">삭제</a>		
+    		<script>console.log('${one}')</script> 		
+    		<p><a href="#" onclick=""><img src="${one.place_img}"></a></p>
+    		<p><a style="color: black;" href="#" onclick="">${one.place_info}</a></p>
+    		<p><a href="#" onclick="location.href='/trip/member/deleteFavorite?favorite_idx=${list.get(status.index).favorite_idx}'"><button class="btn" style="color:black;">삭제</button>	</a>	
     		</td>
     		
     		<c:if test="${status.count mod 2 eq 0}">
