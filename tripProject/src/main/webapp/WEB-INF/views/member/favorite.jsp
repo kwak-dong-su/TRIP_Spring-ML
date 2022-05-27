@@ -180,8 +180,8 @@ div{
     			
     		<td style="text-align: left;">
     		<script>console.log('${one}')</script> 		
-    		<p><a href="#" onclick=""><img src="${one.place_img}"></a></p>
-    		<p><a style="color: black;" href="#" onclick="">${one.place_info}</a></p>
+    		<p><a href="#" onclick="location.href='/trip/place/pDetail?place_idx=${one.place_idx}'"><img src="${one.place_img}"></a></p>
+    		<p><a style="color: black;" href="#" onclick="location.href='/trip/place/pDetail?place_idx=${one.place_idx}'">${one.place_info}</a></p>
     		<p><a href="#" onclick="location.href='/trip/member/deleteFavorite?favorite_idx=${list.get(status.index).favorite_idx}'"><button class="btn" style="color:black;">삭제</button>	</a>	
     		</td>
     		

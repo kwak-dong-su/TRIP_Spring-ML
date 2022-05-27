@@ -18,6 +18,21 @@ public class PlaceVO {
 	private String place_view;
 	private String place_like;
 	
+	String searchCondition;
+	String searchKeyword;
+	
+	public String getSearchCondition() {
+		return searchCondition;
+	}
+	public void setSearchCondition(String searchCondition) {
+		this.searchCondition = searchCondition;
+	}
+	public String getSearchKeyword() {
+		return searchKeyword;
+	}
+	public void setSearchKeyword(String searchKeyword) {
+		this.searchKeyword = searchKeyword;
+	}
 	public int getPlace_idx() {
 		return place_idx;
 	}
