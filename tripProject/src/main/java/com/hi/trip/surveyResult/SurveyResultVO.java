@@ -8,6 +8,15 @@ public class SurveyResultVO {
 	private Timestamp surveyResult_date;
 	private String surveyResult_recommendation;
 	private String surveyResult_answers;
+	private int survey_idx;
+	
+	@Override
+	public String toString() {
+		return "SurveyResultVO [surveyResult_idx=" + surveyResult_idx + ", member_idx=" + member_idx
+				+ ", surveyResult_date=" + surveyResult_date + ", surveyResult_recommendation="
+				+ surveyResult_recommendation + ", surveyResult_answers=" + surveyResult_answers + ", survey_idx="
+				+ survey_idx + "]";
+	}
 	public int getSurveyResult_idx() {
 		return surveyResult_idx;
 	}
@@ -38,14 +47,10 @@ public class SurveyResultVO {
 	public void setSurveyResult_answers(String surveyResult_answers) {
 		this.surveyResult_answers = surveyResult_answers;
 	}
-	
-	@Override
-	public String toString() {
-		return "SurveyResultVO [surveyResult_idx=" + surveyResult_idx + ", member_idx=" + member_idx
-				+ ", surveyResult_date=" + surveyResult_date + ", surveyResult_recommendation="
-				+ surveyResult_recommendation + ", surveyResult_answers=" + surveyResult_answers + "]";
+	public int getSurvey_idx() {
+		return survey_idx;
 	}
-	
-	
-	
+	public void setSurvey_idx(int survey_idx) {
+		this.survey_idx = survey_idx;
+	}
 }

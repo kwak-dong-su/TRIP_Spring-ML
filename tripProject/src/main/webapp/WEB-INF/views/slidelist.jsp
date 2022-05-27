@@ -17,10 +17,12 @@
 				<!-- if문 i 값이 1이면 출력 -->
 				<div class="item active">
 					<h2 class="nino-sectionHeading">
-						<span class="nino-subHeading">${one.place_info}</span> <img
+						<a href="place/pDetail?place_idx=${one.place_idx}"> <span
+							class="nino-subHeading">${one.place_info}</span> <img
 							src="${one.place_img}" alt="">
+						</a>
 					</h2>
-					<a href="#" class="nino-btn">이동하기</a>
+					<a href="place/pDetail?place_idx=${one.place_idx}" class="nino-btn">이동하기</a>
 				</div>
 			</c:when>
 
@@ -28,10 +30,12 @@
 				<!-- 1이 아니면 출력 -->
 				<div class="item">
 					<h2 class="nino-sectionHeading">
-						<span class="nino-subHeading">${one.place_info}</span> <img
+						<a href="place/pDetail?place_idx=${one.place_idx}"> <span
+							class="nino-subHeading">${one.place_info}</span> <img
 							src="${one.place_img}" alt="">
+						</a>
 					</h2>
-					<a href="#" class="nino-btn">이동하기</a>
+					<a href="place/pDetail?place_idx=${one.place_idx}" class="nino-btn">이동하기</a>
 				</div>
 			</c:otherwise>
 		</c:choose>
