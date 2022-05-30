@@ -118,11 +118,11 @@
 				if (session.getAttribute("member_name") != null) {
 			%>
 				<center><a href="#" onclick="location.href='/trip/member/createFavorite?place_idx=${one.place_idx}'"><button style="color: black;">즐겨찾기 추가</button></a></center>
-				<center><a href="http://127.0.0.1:8000/placeReview/reviewList/${one.place_info}/<%=session.getAttribute("member_name")%>"><button style="color: black;">리뷰 페이지</button></a></center>
+				<center><a href="http://127.0.0.1:8000/placeReview/reviewList/${one.place_info}/<%=session.getAttribute("member_name")%>/1"><button style="color: black;">리뷰 페이지</button></a></center>
 			<%
 				} else {
 			%>
-				<center><a href="http://127.0.0.1:8000/placeReview/reviewList/${one.place_info}/0"><button style="color: black;">리뷰 페이지</button></a></center>
+				<center><a href="http://127.0.0.1:8000/placeReview/reviewList/${one.place_info}/0/1"><button style="color: black;">리뷰 페이지</button></a></center>
 				
 			<%
 				}

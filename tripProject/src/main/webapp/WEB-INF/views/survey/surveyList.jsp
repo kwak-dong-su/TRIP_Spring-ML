@@ -17,13 +17,7 @@
 <script type="text/javascript"
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 
-<script>
-$(function() {
-	$('#send').click(function(){
-	
-	});
-}
-</script>
+
 
 </head>
 <body>
@@ -41,6 +35,9 @@ $(function() {
 		<div id="surveyform"
 			style="float: left; width: 50%; text-align: left;">
 			<form class=" bg-white px-4" action="http://127.0.0.1:8000/trip/surveyResult/newSurveyResult" method="post">
+<%--  			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>			
+ --%> 			
+				<sec:csrfInput />
 				<table class="table table-striped"
 				style="text-align: center; border: 1px solid #dddddd">
 				<thead>
@@ -60,8 +57,8 @@ $(function() {
 
 										<c:otherwise>
 										<c:forTokens items="${one.survey_choices}" var="choice" delims=",">
-											<input class="form-check-input" type="radio" name="exampleForm${status.count}" id="radioExample1${status.count}" />
-											<label class="form-check-label" for="answer${status.count}">
+											<input class="form-check-input" type="radio" name="answer${status.count}" id="answer${status.count}" value="${choice}" />
+											<label class="form-check-label" for="radioExample1${status.count}" >
 												<c:out value="${choice}" />
 											</label>
 										</c:forTokens>
@@ -73,9 +70,8 @@ $(function() {
 					</c:forEach>
 					</thead>
 				</table>
-					<button>submit</button>
-<!-- 				<button type="button" class="btn btn-primary" href="http://127.0.0.1:8000/trip/surveyResult/newSurveyResult/1/1/2/1/2/1/2/1/2/1/2/1/2/1/2/1/2/1">Submit</button>
- -->			</form>
+  				<input type="submit" value="Submit">
+			</form>
 		</div>
 	</div>
 
