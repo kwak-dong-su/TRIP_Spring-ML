@@ -142,6 +142,7 @@
 	<!-- Scroll to top
     ================================================== -->
 	<a href="#" id="nino-scrollToTop">Go to Top</a>
+	<center><a href="http://127.0.0.1:8000"><button style="color: black;">여행지 시각화</button></a></center>
 
 
 	
