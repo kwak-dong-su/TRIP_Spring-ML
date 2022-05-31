@@ -97,6 +97,8 @@ $(function() {
 			<button class="btn btn-danger" type="submit">검색</button>
 		</form>
 </div>
+<img src="../resources/img/여행지 종류 파이차트.png">
+<img src="../resources/img/지역별 여행지 수 파이차트.png">
 <!-- <div id = "pShowSearch">
 
 </div> -->
