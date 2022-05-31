@@ -89,7 +89,7 @@ $(function(){
 			$.ajax({
 				url: "nameCheck" ,
 				data: {
-					name : $('#member_name').val()
+					member_name : $('#member_name').val()
 				},
 				success: function(result){
 					console.log(result)
